@@ -1,0 +1,6 @@
+# bazel tool
+bazel-bin
+bazel-genfiles
+bazel-GXBazelShell
+bazel-out
+bazel-testlogs
