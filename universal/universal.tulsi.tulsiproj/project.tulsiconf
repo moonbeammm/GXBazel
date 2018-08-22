@@ -1,0 +1,12 @@
+{
+  "configDefaults" : {
+    "optionSet" : {
+
+    }
+  },
+  "projectName" : "universal",
+  "packages" : [
+    "universal"
+  ],
+  "workspaceRoot" : "../.."
+}

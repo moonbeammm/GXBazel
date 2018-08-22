@@ -1,0 +1,10 @@
+{
+  "optionSet" : {
+    "WorkspaceRootPath" : {
+      "p" : "/Users/bilibili/Desktop/GXBazelShell"
+    },
+    "BazelPath" : {
+      "p" : "/usr/local/Cellar/bazel/0.15.2/bin/bazel"
+    }
+  }
+}

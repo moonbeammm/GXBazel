@@ -4,3 +4,8 @@ bazel-genfiles
 bazel-GXBazelShell
 bazel-out
 bazel-testlogs
+
+default.profraw
+
+# xcode
+universal/universal.xcodeproj
