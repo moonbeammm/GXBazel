@@ -5,6 +5,8 @@ bazel-GXBazelShell
 bazel-out
 bazel-testlogs
 
+# tulsi
+tulsi-workspace
 default.profraw
 
 # xcode
