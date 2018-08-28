@@ -1,7 +1,7 @@
 
 # 如何运行
 
-$ cd ../GXShell
+$ cd ../GXBazel
 $ sh build.sh
 
 # 工程结构
