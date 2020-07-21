@@ -1,0 +1,3 @@
+#import %workspace%/bilirules.bazelrc
+build --incompatible_disable_deprecated_attr_params=false
+try-import %workspace%/customized-provision/custom.bazelrc

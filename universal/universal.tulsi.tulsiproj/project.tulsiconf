@@ -4,9 +4,9 @@
 
     }
   },
-  "projectName" : "universal",
   "packages" : [
     "universal"
   ],
+  "projectName" : "universal",
   "workspaceRoot" : "../.."
 }
