@@ -11,7 +11,9 @@ objc_library(
         "universal/AppDelegate.h",
         "universal/ViewController.h",
     ],
-    # deps = BUSINESS_LIB + GFC_LIB +SDKS,
+    deps = [
+        "//srcs/app/GXHome:gxhome_library",
+    ],
     # sdk_dylibs = ["xml2", "resolv", "z", "bz2"],
     # resources = glob(["universal/launch*.png"]),
     enable_modules = 1,
@@ -53,15 +55,3 @@ ios_application(
 #    }),
 #    frameworks = ["//",],
 )
-
-#BUSINESS_LIB = [
-#    "your business lib path."
-#]
-
-#GFC_LIB = [
-#    "your foundation core lib path."
-#]
-
-#SDKS = [
-#    "other frameworks path"
-#]
