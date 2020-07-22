@@ -1,26 +1,24 @@
 {
-  "sourceFilters" : [
-    "universal",
-    "universal/universal"
+  "additionalFilePaths" : [
+    "universal/BUILD"
   ],
   "buildTargets" : [
     "//universal:universal"
   ],
-  "projectName" : "universal",
   "optionSet" : {
     "BazelBuildOptionsDebug" : {
+      "p" : "$(inherited)"
+    },
+    "BazelBuildOptionsRelease" : {
+      "p" : "$(inherited)"
+    },
+    "BazelBuildStartupOptionsDebug" : {
       "p" : "$(inherited)"
     },
     "BazelBuildStartupOptionsRelease" : {
       "p" : "$(inherited)"
     },
-    "LaunchActionPreActionScript" : {
-      "p" : "$(inherited)"
-    },
-    "LaunchActionPostActionScript" : {
-      "p" : "$(inherited)"
-    },
-    "EnvironmentVariables" : {
+    "BuildActionPostActionScript" : {
       "p" : "$(inherited)"
     },
     "BuildActionPreActionScript" : {
@@ -29,23 +27,54 @@
     "CommandlineArguments" : {
       "p" : "$(inherited)"
     },
-    "TestActionPreActionScript" : {
+    "EnvironmentVariables" : {
       "p" : "$(inherited)"
     },
-    "BazelBuildStartupOptionsDebug" : {
+    "LaunchActionPostActionScript" : {
       "p" : "$(inherited)"
     },
-    "BuildActionPostActionScript" : {
+    "LaunchActionPreActionScript" : {
       "p" : "$(inherited)"
     },
     "TestActionPostActionScript" : {
       "p" : "$(inherited)"
     },
-    "BazelBuildOptionsRelease" : {
+    "TestActionPreActionScript" : {
       "p" : "$(inherited)"
     }
   },
-  "additionalFilePaths" : [
-    "universal/BUILD"
+  "projectName" : "universal",
+  "sourceFilters" : [
+    "external/...",
+    "external/bazel_skylib",
+    "external/bazel_skylib/lib",
+    "external/bazel_skylib/rules",
+    "external/bazel_tools",
+    "external/bazel_tools/tools",
+    "external/bazel_tools/tools/build_defs",
+    "external/bazel_tools/tools/build_defs/cc",
+    "external/build_bazel_apple_support",
+    "external/build_bazel_apple_support/lib",
+    "external/build_bazel_rules_apple",
+    "external/build_bazel_rules_apple/apple",
+    "external/build_bazel_rules_apple/apple/internal",
+    "external/build_bazel_rules_apple/apple/internal/aspects",
+    "external/build_bazel_rules_apple/apple/internal/partials",
+    "external/build_bazel_rules_apple/apple/internal/partials/support",
+    "external/build_bazel_rules_apple/apple/internal/resource_actions",
+    "external/build_bazel_rules_apple/apple/internal/testing",
+    "external/build_bazel_rules_apple/apple/internal/utils",
+    "external/build_bazel_rules_swift",
+    "external/build_bazel_rules_swift/swift",
+    "external/build_bazel_rules_swift/swift/internal",
+    "srcs/...",
+    "srcs/app",
+    "srcs/app/GXHome",
+    "srcs/app/GXHome/GXHome",
+    "srcs/app/GXHome/GXHome/GXHome",
+    "srcs/app/GXHome/include",
+    "srcs/app/GXHome/include/GXHome",
+    "universal/...",
+    "universal/universal"
   ]
 }
