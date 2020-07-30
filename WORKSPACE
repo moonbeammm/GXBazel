@@ -28,3 +28,47 @@ git_repository(
     remote = "https://github.com/bazelbuild/bazel-skylib.git",
     tag = "1.0.2",
 )
+
+load('@bazel_tools//tools/build_defs/repo:git.bzl', 'new_git_repository')
+
+
+new_git_repository(
+    name = "iglistkit",
+    remote = "https://github.com/bilibili/IGListKit.git",
+    tag = "ra4.0.0--bl0.0.1--20200511--001",
+    build_file_content = """
+
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+package(default_visibility = ["//visibility:public"])
+
+objc_library(
+    name = "IGListDiffKit",
+    srcs = glob([
+        "Source/IGListDiffKit/**/*.m",
+        "Source/IGListDiffKit/**/*.mm",
+        "Source/IGListDiffKit/Internal/*.h"
+    ]),
+    hdrs = glob(["Source/IGListDiffKit/*.h"],["Source/IGListDiffKit/Internal/*.h"]),
+    includes = ["Source", "Source/IGListDiffKit", "Source/IGListDiffKit/Internal"],
+    module_name = "IGListDiffKit",
+)
+
+objc_library(
+    name = "IGListKit",
+    srcs = glob([
+        "Source/IGListKit/*.m",
+        "Source/IGListKit/*.mm",
+        "Source/IGListKit/Internal/*.m",
+        "Source/IGListKit/Internal/*.mm",
+        "Source/IGListKit/Internal/*.h"
+    ]),
+    hdrs = glob(["Source/IGListKit/*.h"],["Source/IGListKit/Internal/*.h"]),
+    includes = ["Source", "Source/IGListKit", "Source/IGListKit/Internal"],
+    deps = [":IGListDiffKit"],
+    sdk_frameworks = ["CoreGraphics", "QuartzCore"],
+    module_name = "IGListKit",
+)
+
+
+""",
+)

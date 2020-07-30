@@ -1,3 +1,23 @@
 #import %workspace%/bilirules.bazelrc
-build --incompatible_disable_deprecated_attr_params=false
+
+#build --apple_platform_type=ios
+#build --announce_rc
+#build --remote_http_cache=http://bazel-cache.bilibili.co/ios --remote_local_fallback
+#build --show_progress_rate_limit=5
+#build --ios_multi_cpus=arm64,armv7,x86_64
+#build --verbose_failures
+#build --subcommands
+#build:unit --features=race
+build --spawn_strategy=standalone
+build --genrule_strategy=standalone
+#build --output_filter=^$
+#build --ios_minimum_os=9.0
+#build --remote_timeout=15
+#build --remote_max_connections=0
+#build --profile=bazel-profile
+#build --watchfs
+#build --define backdoor=1
+#build --keep_going
+#test --test_output=errors
+
 try-import %workspace%/customized-provision/custom.bazelrc

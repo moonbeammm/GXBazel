@@ -1,0 +1,12 @@
+{
+  "configDefaults" : {
+    "optionSet" : {
+
+    }
+  },
+  "packages" : [
+    "universal"
+  ],
+  "projectName" : "GXBazel",
+  "workspaceRoot" : "../.."
+}

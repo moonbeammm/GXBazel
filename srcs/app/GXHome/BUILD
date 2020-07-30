@@ -12,7 +12,7 @@ objc_library(
         "-iquote srcs/app/GXHome/include/GXHome",
     ],
     deps = [
-        #"@iglistkit//:IGListKit",
+        "@iglistkit//:IGListKit",
     ],
     includes = ["include"],
 )
