@@ -1,23 +1,18 @@
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_application")
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
-objc_library(
+swift_library(
     name = "universal_lib",
     srcs = [
-        "universal/main.m",
-        "universal/AppDelegate.m",
-        "universal/ViewController.m",
-    ],
-    hdrs = [
-        "universal/AppDelegate.h",
-        "universal/ViewController.h",
+        "universal/main.swift",
+        "universal/AppDelegate.swift",
     ],
     deps = [
-        "//srcs/app/GXHome:gxhome_library",
+        "//srcs/app/GXHome:home_library",
         "//srcs/app/GXPlayer:gxplayer_library",
     ],
     # sdk_dylibs = ["xml2", "resolv", "z", "bz2"],
     # resources = glob(["universal/launch*.png"]),
-    enable_modules = 1,
 )
 
 ios_application(

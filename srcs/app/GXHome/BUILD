@@ -1,18 +1,12 @@
 package(default_visibility = ["//visibility:public"])
 
-objc_library(
-    name = "gxhome_library",
-    srcs = glob([
-        "GXHome/**/*.m",
-        "GXHome/**/*.h",
-    ]),
-    hdrs = glob(["include/GXHome/*.h"]),
-    copts = [
-        "-iquote srcs/app/GXHome/GXHome",
-        "-iquote srcs/app/GXHome/include/GXHome",
-    ],
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "home_library",
+    srcs = glob(["**/*.swift"]),
     deps = [
         "@iglistkit//:IGListKit",
+        #"@rxswift//:RxCocoa",
     ],
-    includes = ["include"],
 )
