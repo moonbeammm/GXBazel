@@ -7,6 +7,6 @@ swift_library(
     srcs = glob(["**/*.swift"]),
     deps = [
         "@iglistkit//:IGListKit",
-        #"@rxswift//:RxCocoa",
+        "@rxswift//:RxCocoa",
     ],
 )

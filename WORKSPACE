@@ -63,6 +63,56 @@ git_repository(
 
 load('@bazel_tools//tools/build_defs/repo:git.bzl', 'new_git_repository')
 
+##################################    RxSwift    ########################################
+
+new_git_repository(
+    name = "rxswift",
+    remote = "https://github.com/ReactiveX/RxSwift.git",
+    tag = "5.0.1",
+    build_file_content = """
+
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+package(default_visibility = ["//visibility:public"])
+
+swift_library(
+    name = "RxSwift",
+    srcs = glob([
+        "Sources/RxSwift/**/*.swift",
+    ]),
+)
+
+objc_library(
+    name = "RxCocoaRuntime",
+    srcs = glob([
+        "Sources/RxCocoaRuntime/**/*.m",
+    ]),
+    hdrs = glob(["Sources/RxCocoaRuntime/include/*.h"]),
+    includes = ["."],
+    module_name = "RxCocoaRuntime",
+)
+
+
+swift_library(
+    name = "RxCocoa",
+    srcs = glob([
+        "Sources/RxCocoa/**/*.swift",
+    ]),
+    defines = ["SWIFT_PACKAGE"],
+    deps = [":RxSwift", ":RxRelay", ":RxCocoaRuntime"],
+)
+
+swift_library(
+    name = "RxRelay",
+    srcs = glob([
+        "Sources/RxRelay/**/*.swift",
+    ]),
+    deps = [":RxSwift"],
+)
+
+""",
+)
+
+##################################    IGListDiffKit    ########################################
 
 new_git_repository(
     name = "iglistkit",
