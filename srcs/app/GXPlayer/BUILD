@@ -12,7 +12,7 @@ objc_library(
         "-iquote srcs/app/GXPlayer/include/GXPlayer",
     ],
     deps = [
-        #"@iglistkit//:IGListKit",
+        "//srcs/common/GXKVO:gxkvo_library",
     ],
     includes = ["include"],
 )

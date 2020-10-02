@@ -10,6 +10,8 @@ swift_library(
     deps = [
         "//srcs/app/GXHome:home_library",
         "//srcs/app/GXPlayer:gxplayer_library",
+        "//srcs/common/GXCNavigationController:gxcnavigationcontroller_library",
+        "//srcs/common/GXCTabBarController:gxctabbarcontroller_library",
     ],
     # sdk_dylibs = ["xml2", "resolv", "z", "bz2"],
     # resources = glob(["universal/launch*.png"]),
