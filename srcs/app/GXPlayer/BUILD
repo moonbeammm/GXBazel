@@ -13,6 +13,7 @@ objc_library(
     ],
     deps = [
         "//srcs/common/GXKVO:gxkvo_library",
+        "@iglistkit//:IGListKit",
     ],
     includes = ["include"],
 )

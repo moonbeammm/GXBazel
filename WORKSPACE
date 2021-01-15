@@ -6,7 +6,7 @@ git_repository(
     # 该存储库包含支持基于Apple平台的构建规则的帮助程序方法。
     name = "build_bazel_apple_support",
     remote = "https://github.com/bazelbuild/apple_support.git",
-    tag = "0.7.2",
+    tag = "0.9.1",
 )
 
 load(
@@ -20,7 +20,7 @@ git_repository(
     # 作用编译swift代码
     name = "build_bazel_rules_swift",
     remote = "https://github.com/bazelbuild/rules_swift.git",
-    tag = "0.13.0",
+    tag = "0.15.0",
 )
 
 load(
@@ -51,14 +51,14 @@ git_repository(
     # 作用是帮你编译苹果设备的软件
     name = "build_bazel_rules_apple",
     remote = "https://github.com/bazelbuild/rules_apple.git",
-    tag = "0.19.0",
+    tag = "0.21.1",
 )
 
 git_repository(
     # 作用是帮你管理你的源文件
     name = "bazel_skylib",
     remote = "https://github.com/bazelbuild/bazel-skylib.git",
-    tag = "1.0.2",
+    tag = "1.0.3",
 )
 
 load('@bazel_tools//tools/build_defs/repo:git.bzl', 'new_git_repository')
@@ -68,7 +68,7 @@ load('@bazel_tools//tools/build_defs/repo:git.bzl', 'new_git_repository')
 new_git_repository(
     name = "rxswift",
     remote = "https://github.com/ReactiveX/RxSwift.git",
-    tag = "5.0.1",
+    tag = "6.0.0",
     build_file_content = """
 
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
@@ -117,7 +117,7 @@ swift_library(
 new_git_repository(
     name = "iglistkit",
     remote = "https://github.com/bilibili/IGListKit.git",
-    tag = "ra4.0.0--bl0.0.1--20200511--001",
+    tag = "ra4.0.0--bl0.1.0--20210113--001",
     build_file_content = """
 
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")

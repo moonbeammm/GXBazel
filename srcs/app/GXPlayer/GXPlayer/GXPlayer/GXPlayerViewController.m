@@ -9,10 +9,13 @@
 #import "GXPlayerViewController.h"
 
 #import "GXPlayerCollectionViewCell.h"
+#import "GXPlayerCollectionView.h"
+
+#import "GXPlayerTestVC.h"
 
 @interface GXPlayerViewController () <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) GXPlayerCollectionView *collectionView;
 
 @end
 
@@ -26,7 +29,7 @@
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    self.collectionView=[[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    self.collectionView=[[GXPlayerCollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     self.collectionView.dataSource=self;
     self.collectionView.delegate=self;
     [self.collectionView setBackgroundColor:[UIColor grayColor]];
@@ -53,14 +56,14 @@
     GXPlayerCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor colorWithRed:((10 * indexPath.row) / 255.0) green:((20 * indexPath.row)/255.0) blue:((30 * indexPath.row)/255.0) alpha:1.0f];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    label.textColor = [UIColor redColor];
-    label.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+//    label.textColor = [UIColor redColor];
+//    label.text = [NSString stringWithFormat:@"%ld",indexPath.row];
  
-    for (id subView in cell.contentView.subviews) {
-        [subView removeFromSuperview];
-    }
-    [cell.contentView addSubview:label];
+//    for (id subView in cell.contentView.subviews) {
+//        [subView removeFromSuperview];
+//    }
+//    [cell.contentView addSubview:label];
     cell.collectionViewGesture = self.collectionView.panGestureRecognizer;
     return cell;
 }
@@ -83,6 +86,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
 //    cell.backgroundColor = [UIColor whiteColor];
+    GXPlayerTestVC *vc = [GXPlayerTestVC new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //返回这个UICollectionView是否可以被选择

@@ -20,29 +20,30 @@ swift_library(
 ios_application(
     name = "universal",
     bundle_id = "com.sunxxxx.universal",
-#    app_icons = glob(["universal/Assets.xcassets/AppIcon.appiconset/*.png"]) 
-#              + glob(["universal/Assets.xcassets/AppIcon.appiconset/*.json"]),
-#    launch_storyboard = "universal/Launch Screen.xib",
-    families = [
-        "iphone",
-        "ipad",
-    ],
+    app_icons = glob(["universal/Assets.xcassets/AppIcon.appiconset/*.png"])
+              + glob(["universal/Assets.xcassets/AppIcon.appiconset/*.json"]),
+    launch_storyboard = "universal/Launch Screen.xib",
+    families = ["iphone", "ipad"],
     minimum_os_version = "9.0",
     infoplists = [":universal/Info.plist"],
     visibility = ["//visibility:public"],
     deps = [
         ":universal_lib"
     ],
-#    provisioning_profile = select({
-#        "//:ios_adhoc": ":universal_AdHoc.mobileprovision",
-#        "//:ios_store": ":universal_Store.mobileprovision",
-#        "//conditions:default": ":universal_Debug.mobileprovision" ,
-#    }),
-#    entitlements = select({
-#        "//:ios_adhoc": ":universal/universal_adhoc.entitlements",
-#        "//:ios_store": ":universal/universal_store.entitlements",
-#        "//conditions:default": ":universal/universal_development.entitlements"
-#    }),
+    provisioning_profile = "//universal:App_custom.mobileprovision",
+    #provisioning_profile = select({
+     #   "//:ios_dev": ":App_custom.mobileprovision",
+      #  "//:ios_adhoc": ":App_custom.mobileprovision",
+       # "//:ios_store": ":App_custom.mobileprovision",
+        #"//:ios_enter": ":App_custom.mobileprovision",
+        #"//:ios_custom": ":App_custom.mobileprovision",
+        #"//conditions:default": ":App_custom.mobileprovision",
+   # }),
+    #entitlements = select({
+     #   "//:ios_adhoc": ":universal/App_custom.entitlements",
+      #  "//:ios_store": ":universal/App_custom.entitlements",
+       # "//conditions:default": ":universal/App_custom.entitlements"
+    #}),
 #    extensions = ["//universal/MessageExtension:messageextension",
 #                    "//universal/WidgetExtension:widgetextension",
 #                    "//universal/NotificationServiceExtension:notificationextension"],

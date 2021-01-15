@@ -15,4 +15,22 @@ public class NavigationController : UINavigationController {
         
         self.view.backgroundColor = UIColor.red
     }
+    
+    public override var shouldAutorotate: Bool {
+        return topViewController?.shouldAutorotate ?? true
+    }
+
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return topViewController?.supportedInterfaceOrientations ?? .allButUpsideDown
+    }
+
+    public override var prefersStatusBarHidden: Bool {
+        return topViewController?.prefersStatusBarHidden ?? false
+    }
+
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        return topViewController?.preferredStatusBarStyle ?? UIStatusBarStyle.lightContent
+    }
+    
+    
 }

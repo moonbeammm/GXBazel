@@ -1,7 +1,7 @@
 {
   "optionSet" : {
     "BazelPath" : {
-      "p" : "/opt/Mine/GXBazel/bin/bazel/1.2.1/bazel-1.2.1-darwin-x86_64"
+      "p" : "/opt/Mine/GXBazel/bin/bazel/3.7.0/bazel-3.7.0-darwin-x86_64"
     },
     "WorkspaceRootPath" : {
       "p" : "/opt/Mine/GXBazel"

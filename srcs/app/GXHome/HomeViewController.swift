@@ -38,8 +38,7 @@ public class HomeViewController: UIViewController {
         
 //        let assetArr = self.getAllAlbumAndPHAsset()
 //        print(assetArr)
-        let playerVC = GXPlayerViewController.init()
-        self.navigationController?.pushViewController(playerVC, animated: true)
+
     }
     
     
@@ -57,6 +56,10 @@ public class HomeViewController: UIViewController {
         return arr
     }
 
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let playerVC = GXPlayerIGListTestVC.init()
+        self.navigationController?.pushViewController(playerVC, animated: true)
+    }
 
     //2.先获取所有相册，然后从相机胶卷中获取PHAsset集合,（相机胶卷是相册中的一个，包含了所有视频和相册）
 
